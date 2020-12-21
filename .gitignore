@@ -6,3 +6,4 @@ bin/*
 .*
 !.gitignore
 !.github
+!.*.yml
