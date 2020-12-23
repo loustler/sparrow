@@ -1,16 +1,19 @@
 package cmd
 
 import (
-	"github.com/loustler/mac-suite/cmd/config/app/options"
+	"github.com/loustler/sparrow/cmd/config/app/options"
 	"github.com/spf13/cobra"
 )
 
 func NewConfigCommand() *cobra.Command {
 	cmds := &cobra.Command {
 		Use: "config --flags",
-		Short: "organic configuration",
+		Short: "Modify configuration",
 		Long: `
-			Modify organic config files using flags like "organic config --git-user=loustler --git-email=dev.loustler@gmail.com"`,
+			Modify configuration files using flags like "sparrow config --git-user=loustler --git-email=dev.loustler@gmail.com"`,
+			RunE: func(cmd *cobra.Command, args []string) error {
+				return RunConfigCommand(cmd, args)
+			},
 	}
 
 	configOption := options.NewDefaultConfigOptions()
@@ -19,4 +22,8 @@ func NewConfigCommand() *cobra.Command {
 	cmds.MarkFlagRequired(options.SystemUserNameFlag)
 
 	return cmds
+}
+
+func RunConfigCommand(cmd *cobra.Command, args []string) error  {
+
 }

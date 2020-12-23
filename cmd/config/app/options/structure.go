@@ -1,7 +1,7 @@
 package options
 
 type ConfigOptions struct {
-	// organic config file path
+	// configuration file path
 	ConfigFilePath string
 
 	// In git-config, user.name. See https://git-scm.com/docs/git-config

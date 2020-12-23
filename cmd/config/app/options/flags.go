@@ -9,7 +9,7 @@ func AddKConfigFlags(fs *pflag.FlagSet, options *ConfigOptions) {
 }
 
 func addConfigPathFlag(fs *pflag.FlagSet, options *ConfigOptions) {
-	fs.StringVar(&options.ConfigFilePath, ConfigFlag, "", "Modify organic config path")
+	fs.StringVar(&options.ConfigFilePath, ConfigFlag, "", "Modify configuration file path")
 }
 
 func addGitConfigFlags(fs *pflag.FlagSet, options *ConfigOptions) {

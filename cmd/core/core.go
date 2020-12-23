@@ -5,15 +5,15 @@ import (
 	"io"
 )
 
-func NewOrganicCommand(in io.Reader, out, err io.Writer) *cobra.Command {
+func NewRootCommand(in io.Reader, out, err io.Writer) *cobra.Command {
 	return &cobra.Command {
-		Use: "organic SUBCOMMAND",
-		Short: "organic set up dev env on macOS",
+		Use: "sparrow SUBCOMMAND",
+		Short: "sparrow helps set-up dev env on macOS",
 		Long: `
-		organic setup development environment on macOS
+		sparrow helps set-up development environment on macOS
 
 		Find more information at:
-			https://github.com/loustler/organic`,
+			https://github.com/loustler/sparrow`,
 		Run: runHelp,
 	}
 }

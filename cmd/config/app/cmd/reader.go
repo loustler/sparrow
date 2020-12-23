@@ -6,7 +6,7 @@ import (
 	"io/ioutil"
 )
 
-func ReadConfigFile(path string) Config {
+func readConfigFile(path string) Config {
 	data, err := ioutil.ReadFile(path)
 
 	if err != nil {
@@ -22,4 +22,14 @@ func ReadConfigFile(path string) Config {
 	}
 
 	return config
+}
+
+func readConfigMeta(path string) ConfigMeta {
+	data, _ := ioutil.ReadFile(path)
+
+	var configMeta ConfigMeta
+
+	json.Unmarshal(data, &configMeta)
+
+	return configMeta
 }

@@ -1,4 +1,4 @@
-module github.com/loustler/mac-suite
+module github.com/loustler/sparrow
 
 go 1.15
 
