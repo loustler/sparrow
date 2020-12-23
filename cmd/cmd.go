@@ -1,17 +1,16 @@
 package cmd
 
 import (
-	config "github.com/loustler/sparrow/cmd/config/app/cmd"
 	"github.com/loustler/sparrow/cmd/core"
 	initCmd "github.com/loustler/sparrow/cmd/init/app/cmd"
 	"github.com/spf13/cobra"
-	"os"
+	"io"
 )
 
-func NewCommand() *cobra.Command {
-	cmds := core.NewRootCommand(os.Stdin, os.Stdout, os.Stderr)
+func NewCommand(in io.Reader, out, err io.Writer) *cobra.Command {
+	cmds := core.NewRootCommand(in, out, err)
 
-	cmds.AddCommand(config.NewConfigCommand(), initCmd.NewInitCommand())
+	cmds.AddCommand(initCmd.NewInitCommand())
 
 	return cmds
 }
