@@ -7,7 +7,7 @@ import (
 	"os"
 )
 
-func DownloadFile(url, filepath string) error {
+func Download(url, filepath string) error {
 	res, err := http.Get(url)
 
 	if err != nil {

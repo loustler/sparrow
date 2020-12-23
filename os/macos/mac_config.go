@@ -1,8 +1,9 @@
 package macos
 
 import (
-	"github.com/loustler/sparrow/core/os"
 	"io"
+
+	"github.com/loustler/sparrow/core/os"
 )
 
 func SetHostName(errOut io.Writer, in io.Reader, hostname string) error {

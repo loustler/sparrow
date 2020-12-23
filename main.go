@@ -1,8 +1,9 @@
 package main
 
 import (
-	"github.com/loustler/sparrow/cmd"
 	"os"
+
+	"github.com/loustler/sparrow/cmd"
 )
 
 func main() {

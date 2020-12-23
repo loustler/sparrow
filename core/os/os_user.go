@@ -12,7 +12,7 @@ func IsRootUser(errOut io.Writer, in io.Reader) (bool, error) {
 		return false, err
 	}
 
-	uid, err := strconv.Atoi(uidString[:len(uidString) - 1])
+	uid, err := strconv.Atoi(uidString[:len(uidString)-1])
 
 	return uid == 0, err
 }

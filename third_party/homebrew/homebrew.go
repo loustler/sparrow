@@ -1,8 +1,9 @@
 package homebrew
 
 import (
-	"github.com/loustler/sparrow/core/os"
 	"io"
+
+	"github.com/loustler/sparrow/core/os"
 )
 
 func InstallHomebrew(errOut io.Writer, in io.Reader) error {
