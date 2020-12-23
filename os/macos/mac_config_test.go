@@ -9,7 +9,7 @@ func TestSetHostName(t *testing.T) {
 	var output bytes.Buffer
 	var error bytes.Buffer
 
-	err := SetHostName(&output, &error, &output, "loustler")
+	err := SetHostName(&error, &output, "loustler")
 
 	t.Logf("output is %s", output.String())
 
@@ -22,7 +22,7 @@ func TestShowHiddenFiles(t *testing.T) {
 	var output bytes.Buffer
 	var error bytes.Buffer
 
-	err := ShowHiddenFiles(&output, &error, &output)
+	err := ShowHiddenFiles(&error, &output)
 
 	t.Logf("output is %s", output.String())
 

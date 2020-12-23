@@ -1,12 +1,15 @@
 package download
 
-import "testing"
+import (
+	"github.com/loustler/sparrow/core"
+	"testing"
+)
 
 func TestDownloadFile(t *testing.T) {
-	err := DownloadFile("https://raw.githubusercontent.com/loustler/sparrow/main/LICENSE", "$HOME/LICENSE")
+	err := DownloadFile("https://raw.githubusercontent.com/loustler/sparrow/main/LICENSE", core.Paths(core.HomePath(), "Downloads", "LICENSE"))
 
 	if err != nil {
-		t.Errorf("Cannot download LICENSE file for test")
+		t.Errorf("Cannot download LICENSE file for test. Because %s", err)
 	}
 }
 
