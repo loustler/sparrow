@@ -7,3 +7,4 @@ bin/*
 !.gitignore
 !.github
 !.*.yml
+!.goreleaser.yml
