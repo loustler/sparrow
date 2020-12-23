@@ -5,6 +5,8 @@ import (
 	"io"
 )
 
-func InstallOhMyZsh(out, err io.Writer, in io.Reader) error {
-	return os.RunCommand(out, err, in,"sh" , "-c", `"$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`)
+func InstallOhMyZsh(err io.Writer, in io.Reader) error {
+	_, error := os.RunCommand(err, in,"sh" , "-c", `"$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`)
+
+	return error
 }

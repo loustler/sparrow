@@ -5,18 +5,20 @@ import (
 	"io"
 )
 
-func SetHostName(out, errOut io.Writer, in io.Reader, hostname string) error {
-	err := os.RunCommand(out, errOut, in, "hostname", hostname)
+func SetHostName(errOut io.Writer, in io.Reader, hostname string) error {
+	_, err := os.RunCommand(errOut, in, "hostname", hostname)
 
 	if err != nil {
 		return err
 	}
 
-	err = os.RunCommand(out, errOut, in, "scutil", "--set", "HostName", hostname)
+	_, err = os.RunCommand(errOut, in, "scutil", "--set", "HostName", hostname)
 
 	return err
 }
 
-func ShowHiddenFiles(out, errOut io.Writer, in io.Reader) error {
-	return os.RunCommand(out, errOut, in, "defaults", "write", "com.apple.Finder", "AppleShowAllFiles", "YES")
+func ShowHiddenFiles(errOut io.Writer, in io.Reader) error {
+	_, err := os.RunCommand(errOut, in, "defaults", "write", "com.apple.Finder", "AppleShowAllFiles", "YES")
+
+	return err
 }

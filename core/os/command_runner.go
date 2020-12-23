@@ -5,12 +5,13 @@ import (
 	"os/exec"
 )
 
-func RunCommand(out, errOut io.Writer, in io.Reader, cmd string, args ...string) error {
+func RunCommand(errOut io.Writer, in io.Reader, cmd string, args ...string) (string, error) {
 	command := exec.Command(cmd, args...)
 
-	command.Stdout = out
 	command.Stderr = errOut
 	command.Stdin = in
 
-	return command.Run()
+	output, err := command.Output()
+
+	return string(output), err
 }

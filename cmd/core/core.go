@@ -14,10 +14,8 @@ func NewRootCommand(in io.Reader, out, err io.Writer) *cobra.Command {
 
 		Find more information at:
 			https://github.com/loustler/sparrow`,
-		Run: runHelp,
+		Run: func(cmd *cobra.Command, args []string) {
+			cmd.Help()
+		},
 	}
-}
-
-func runHelp(cmd *cobra.Command, args []string) {
-	cmd.Help()
 }
