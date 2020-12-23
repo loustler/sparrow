@@ -8,4 +8,3 @@ import (
 func WriteToPath(options *options.ConfigOptions) {
 	gojson.Marshal(ConfigOptionToConfig(options))
 }
-

@@ -11,9 +11,9 @@ func NewConfigCommand() *cobra.Command {
 		Short: "Modify configuration",
 		Long: `
 			Modify configuration files using flags like "sparrow config --git-user=loustler --git-email=dev.loustler@gmail.com"`,
-			RunE: func(cmd *cobra.Command, args []string) error {
-				return RunConfigCommand(cmd, args)
-			},
+		RunE: func(cmd *cobra.Command, args []string) error {
+			return RunConfigCommand(cmd, args)
+		},
 	}
 
 	configOption := options.NewDefaultConfigOptions()
@@ -25,5 +25,7 @@ func NewConfigCommand() *cobra.Command {
 }
 
 func RunConfigCommand(cmd *cobra.Command, args []string) error  {
+	meta := readConfigMeta(configMetaPath)
 
+	readConfigFile(meta.configPath)
 }
