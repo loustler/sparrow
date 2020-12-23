@@ -16,7 +16,7 @@ func Download(url, filepath string) error {
 	defer res.Body.Close()
 
 	if res.StatusCode != 200 {
-		return errors.New("cannot receive status code 200 from Given URL")
+		return errors.New("cannot receive status code 200 from given url")
 	}
 
 	file, err := os.Create(filepath)
