@@ -1,4 +1,4 @@
-package mac_suite
+package main
 
 import (
 	"github.com/loustler/sparrow/cmd"
