@@ -1,4 +1,4 @@
-package mac
+package macos
 
 import (
 	"github.com/loustler/sparrow/core/os"
@@ -14,13 +14,9 @@ func SetHostName(out, errOut io.Writer, in io.Reader, hostname string) error {
 
 	err = os.RunCommand(out, errOut, in, "scutil", "--set", "HostName", hostname)
 
-	if err != nil {
-		return err
-	}
-
 	return err
 }
 
-func ShowHiddenFiles(out, err io.Writer, in io.Reader) error {
-	return os.RunCommand(out, err, in, "defaults", "write" , "com.apple.Finder", "AppleShowAllFiles", "YES")
+func ShowHiddenFiles(out, errOut io.Writer, in io.Reader) error {
+	return os.RunCommand(out, errOut, in, "defaults", "write", "com.apple.Finder", "AppleShowAllFiles", "YES")
 }

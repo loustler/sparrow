@@ -6,19 +6,11 @@ import (
 )
 
 func RunCommand(out, errOut io.Writer, in io.Reader, cmd string, args ...string) error {
-	commandPath, err := exec.LookPath(cmd)
+	command := exec.Command(cmd, args...)
 
-	if err != nil {
-		return err
-	}
-
-	command := &exec.Cmd {
-		Path: commandPath,
-		Args: args,
-		Stdout: out,
-		Stderr: errOut,
-		Stdin: in,
-	}
+	command.Stdout = out
+	command.Stderr = errOut
+	command.Stdin = in
 
 	return command.Run()
 }

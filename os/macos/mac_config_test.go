@@ -1,4 +1,4 @@
-package mac
+package macos
 
 import (
 	"bytes"
@@ -14,7 +14,7 @@ func TestSetHostName(t *testing.T) {
 	t.Logf("output is %s", output.String())
 
 	if err != nil {
-		t.Errorf("Failed to set host name.\n By %s", error.String())
+		t.Errorf("Fail to set hostname as loustler. By %s", error.String())
 	}
 }
 
@@ -27,6 +27,6 @@ func TestShowHiddenFiles(t *testing.T) {
 	t.Logf("output is %s", output.String())
 
 	if err != nil {
-		t.Errorf("Failed to set show hidden files.\n By %s", error.String())
+		t.Errorf("Fail to set show all hidden files. By %s", error.String())
 	}
 }
