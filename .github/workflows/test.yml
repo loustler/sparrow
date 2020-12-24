@@ -31,7 +31,7 @@ jobs:
       - name: Checkout codebase
         uses: actions/checkout@v2
       - name: Downlaod dependencies
-        run: go mod download
+        run: go mod file
       - name: Test
         run: sudo go test -timeout 1h -v ./...
       - name: Build
