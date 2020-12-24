@@ -7,7 +7,11 @@ import (
 )
 
 func InstallOhMyZsh(err io.Writer, in io.Reader) error {
-	_, error := os.RunCommand(err, in, "sh", "-c", `"$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`)
-
-	return error
+	return os.RunCommandWithoutOutput(
+		err,
+		in,
+		"sh",
+		"-c",
+		`"$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`,
+	)
 }

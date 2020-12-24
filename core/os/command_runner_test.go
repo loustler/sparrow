@@ -17,3 +17,14 @@ func TestRunListCommand(t *testing.T) {
 		t.Errorf("Failed to execute ls command. By %s", error.String())
 	}
 }
+
+func TestRunCommandWithoutOutput(t *testing.T) {
+	var output bytes.Buffer
+	var error bytes.Buffer
+
+	err := RunCommandWithoutOutput(&error, &output, "ls")
+
+	if err != nil {
+		t.Errorf("Failed to execute ls command. By %s", error.String())
+	}
+}
