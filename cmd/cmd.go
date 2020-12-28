@@ -9,9 +9,9 @@ import (
 )
 
 func NewCommand(in io.Reader, out, err io.Writer) *cobra.Command {
-	cmds := core.NewRootCommand(in, out, err)
+	command := core.NewRootCommand(in, out, err)
 
-	cmds.AddCommand(initCmd.NewInitCommand())
+	command.AddCommand(initCmd.NewInitCommand())
 
-	return cmds
+	return command
 }
