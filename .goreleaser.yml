@@ -15,7 +15,6 @@ builds:
       - arm
       - arm64
 
-
 archives:
   - id: tgz
     format: tar.gz

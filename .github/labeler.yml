@@ -1,0 +1,12 @@
+enhancement:
+  - "**/*.go"
+
+dependencies:
+  - go.mod
+
+configuration:
+  - ".gitignore"
+
+project-management:
+  - ".github/*"
+  - "*.md"
