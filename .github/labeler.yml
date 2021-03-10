@@ -1,4 +1,5 @@
 enhancement:
+  - "*.go"
   - "**/*.go"
 
 dependencies:
@@ -6,6 +7,7 @@ dependencies:
 
 configuration:
   - ".gitignore"
+  - "*.yml"
 
 project-management:
   - ".github/*"
