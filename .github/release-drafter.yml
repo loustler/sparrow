@@ -3,23 +3,22 @@ tag-template: 'v$NEXT_PATCH_VERSION'
 categories:
   - title: ':rocket: Feature'
     labels:
-      - 'feature'
-      - 'enhancement'
+      - feature
+      - enhancement
   - title: ':bug: Bug Fixes'
     labels:
-      - 'bug'
+      - bug
   - title: ':seedling: Dependency Updates'
     labels:
-      - 'dependency-update'
-  - title: ':vertical_traffic_light: Workflows'
-    labels:
-      - 'workflow'
+      - dependency-update
+      - go
   - title: ':envelope: Configuration'
     labels:
-      - 'configuration'
+      - configuration
   - title: ':wrench: Project Management'
     labels:
-      - 'project-management'
+      - project-management
+      - github_actions
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 template: |
   ## Changes
