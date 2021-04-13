@@ -18,7 +18,7 @@ jobs:
       - name: Checkout codebase
         uses: actions/checkout@v2
       - name: Cache go module
-        uses: actions/cache@v2.1.4
+        uses: actions/cache@v2.1.5
         id: cache-gomodules
         with:
           path: ~/go/pkg/mod
