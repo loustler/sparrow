@@ -33,7 +33,7 @@ jobs:
           chmod u+x ./testing/coverage/coverall.sh
           ./testing/coverage/coverall.sh
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v2.1.0
+        uses: codecov/codecov-action@v3.0.0
         with:
           file: ./coverage.txt
           fail_ci_if_error: true
